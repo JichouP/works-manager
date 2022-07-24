@@ -1,0 +1,476 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0"
+servers:
+  - url: http://localhost:12321
+paths:
+  /association:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Model_Association"
+      tags:
+        - Association
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Association"
+      tags:
+        - Association
+  /association/{id}:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Association"
+      tags:
+        - Association
+    put:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Association"
+      tags:
+        - Association
+    delete:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Association"
+      tags:
+        - Association
+  /config:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Config"
+      tags:
+        - Config
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Config"
+      tags:
+        - Config
+  /creator:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Model_Creator"
+      tags:
+        - Creator
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                association_id:
+                  $ref: "#/components/schemas/Type_ID_Nullable"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Creator"
+      tags:
+        - Creator
+  /creator/{id}:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Creator"
+      tags:
+        - Creator
+    put:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                association_id:
+                  $ref: "#/components/schemas/Type_ID_Nullable"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Creator"
+      tags:
+        - Creator
+    delete:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Creator"
+      tags:
+        - Creator
+  /tag:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Model_Tag"
+      tags:
+        - Tag
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Tag"
+      tags:
+        - Tag
+  /tag/{id}:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Tag"
+      tags:
+        - Tag
+    put:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Tag"
+      tags:
+        - Tag
+    delete:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Tag"
+      tags:
+        - Tag
+  /works:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Model_Works"
+      tags:
+        - Work
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                path:
+                  type: string
+                thumbnail:
+                  type: string
+                rate:
+                  type: number
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Works"
+      tags:
+        - Work
+  /works/{id}:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Works"
+      tags:
+        - Work
+    put:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                path:
+                  type: string
+                thumbnail:
+                  type: string
+                rate:
+                  type: number
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Works"
+      tags:
+        - Work
+    delete:
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model_Works"
+      tags:
+        - Work
+
+tags:
+  - name: Association
+  - name: Config
+  - name: Creator
+  - name: Tag
+  - name: Work
+
+components:
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+  schemas:
+    Type_ID:
+      type: integer
+      format: int32
+    Type_ID_Nullable:
+      type: integer
+      format: int32
+      nullable: true
+    Type_Date:
+      type: string
+      format: date-time
+    Model_Association:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/Type_ID"
+        created_at:
+          $ref: "#/components/schemas/Type_Date"
+        updated_at:
+          $ref: "#/components/schemas/Type_Date"
+        name:
+          type: string
+      required:
+        - id
+        - created_at
+        - updated_at
+        - name
+    Model_Config:
+      type: object
+      properties:
+        id:
+          type: number
+        created_at:
+          $ref: "#/components/schemas/Type_Date"
+        updated_at:
+          $ref: "#/components/schemas/Type_Date"
+        base_path:
+          type: string
+      required:
+        - id
+        - created_at
+        - updated_at
+        - base_path
+    Model_Creator:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/Type_ID"
+        created_at:
+          $ref: "#/components/schemas/Type_Date"
+        updated_at:
+          $ref: "#/components/schemas/Type_Date"
+        name:
+          type: string
+        association_id:
+          $ref: "#/components/schemas/Type_ID_Nullable"
+      required:
+        - id
+        - created_at
+        - updated_at
+        - name
+        - association_id
+    Model_Tag:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/Type_ID"
+        created_at:
+          $ref: "#/components/schemas/Type_Date"
+        updated_at:
+          $ref: "#/components/schemas/Type_Date"
+        name:
+          type: string
+      required:
+        - id
+        - created_at
+        - updated_at
+        - name
+    Model_Works:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/Type_ID"
+        created_at:
+          $ref: "#/components/schemas/Type_Date"
+        updated_at:
+          $ref: "#/components/schemas/Type_Date"
+        name:
+          type: string
+        path:
+          type: string
+        thumbnail:
+          type: string
+        rate:
+          type: number
+      required:
+        - id
+        - created_at
+        - updated_at
+        - name
+        - path
+        - thumbnail
+        - rate
